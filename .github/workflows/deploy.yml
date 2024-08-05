@@ -1,0 +1,57 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set Cloudflare DNS
+        run: echo "nameserver 1.1.1.1" | sudo tee /etc/resolv.conf
+
+      - name: Execute remote ssh commands
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            # Exportar el PATH para incluir el directorio de Node.js y PM2
+            export PATH=$PATH:/root/.nvm/versions/node/v22.5.1/bin
+
+            # Actualizar repositorio GitHub
+            cd /var/www/
+            if [ -d "sysdemo03.byma-ve.com" ]; then
+              cd sysdemo03.byma-ve.com
+              git fetch origin main
+              git reset --hard origin/main
+            else
+              git clone git@github.com:byma-ve/sysdemo03.byma-ve.com.git
+              cd sysdemo03.byma-ve.com
+            fi
+
+            # Install dependencies Raiz
+            npm install
+            npm audit fix
+
+            # Install dependencies and build project
+            cd frontend
+            npm install
+            npm audit fix
+            npx update-browserslist-db@latest --yes
+            npm run build
+
+            # Set permissions
+            cd /var/www/
+            chmod -R 777 sysdemo03.byma-ve.com
+
+            # Restart application
+            pm2 restart sysdemo03.byma-ve.com || pm2 start /var/www/sysdemo03.byma-ve.com/index.js --name Sistema01
+            pm2 save
