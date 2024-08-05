@@ -1,3 +1,5 @@
+name: Deploy
+
 on:
   push:
     branches:
@@ -5,15 +7,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  run_deploy:
-    name: Run Deploy
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
 
     steps:
       - name: Set Cloudflare DNS
         run: echo "nameserver 1.1.1.1" | sudo tee /etc/resolv.conf
 
-      - name: Execute remote ssh commands using ssh key
+      - name: Execute remote ssh commands
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -21,36 +23,35 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            export NVM_DIR=~/.nvm
-            source ~/.nvm/nvm.sh
-        
+            # Exportar el PATH para incluir el directorio de Node.js y PM2
+            export PATH=$PATH:/root/.nvm/versions/node/v22.5.1/bin
+
             # Actualizar repositorio GitHub
             cd /var/www/
-            rm -r sysdemo03.byma-ve.com
-            git clone git@github.com:byma-ve/sysdemo03.byma-ve.com.git        
-            
+            if [ -d "sysdemo03.byma-ve.com" ]; then
+              cd sysdemo03.byma-ve.com
+              git fetch origin main
+              git reset --hard origin/main
+            else
+              git clone git@github.com:byma-ve/sysdemo03.byma-ve.com.git
+              cd sysdemo03.byma-ve.com
+            fi
+
             # Install dependencies Raiz
-            cd /var/www/sysdemo03.byma-ve.com        
-            npm ci
-            npm install -g npm@10.7.0  
-            npm audit
-            npm fund
-            npm audit fix            
-            
+            npm install
+            npm audit fix
+
             # Install dependencies and build project
-            cd /var/www/sysdemo03.byma-ve.com
             cd frontend
-            npm ci
-            npm audit
-            npm fund
+            npm install
             npm audit fix
             npx update-browserslist-db@latest --yes
             npm run build
-            
+
             # Set permissions
             cd /var/www/
             chmod -R 777 sysdemo03.byma-ve.com
-            
+
             # Restart application
-            pm2 restart Sistema
+            pm2 restart sysdemo03.byma-ve.com || pm2 start /var/www/sysdemo03.byma-ve.com/index.js --name Sistema01
             pm2 save
