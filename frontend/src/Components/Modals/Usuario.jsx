@@ -26,7 +26,7 @@ export const Usuario = () => {
 
   function logoutSubmit() {
     fetch(
-      `https://sysdemo03.byma-ve.com/BackendApiRest/Administracion/Usuario/estadoDesconectado.php?id=${encodeURIComponent(
+      `https://sysdemo03.byma-ve.com/Administracion/Usuario/estadoDesconectado.php?id=${encodeURIComponent(
         localStorage.getItem("id_usuario")
       )}`
     )
