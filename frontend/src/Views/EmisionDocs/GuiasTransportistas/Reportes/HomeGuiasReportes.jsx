@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "../../../../Layout/Home";
-import NavBarGuias from "../Components/navBarGuias";
+import NavBarGuias2 from "../Components/NavBarGuias2";
 import {
   IconoFolder,
   IconoAgregar,
@@ -10,7 +10,7 @@ import {
 const HomeGuiasReportes = () => {
   return (
     <Home
-      children1={<NavBarGuias />}
+      children1={<NavBarGuias2 />}
       children2={
         <>
           {" "}

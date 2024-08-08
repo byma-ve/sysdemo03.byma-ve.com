@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavBarGuias = () => {
+const NavBarGuias2 = () => {
   return (
     <>
       <div className="cont-navbar relative  mb-3 bg-white rounded-2xl h-[60px] z-0">
@@ -32,4 +32,4 @@ const NavBarGuias = () => {
   );
 };
 
-export default NavBarGuias;
+export default NavBarGuias2;

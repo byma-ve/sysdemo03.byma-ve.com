@@ -1,8 +1,4 @@
-import React, { useState } from "react";
-import {
-  IconoCerrar,
-  IconoCerrarSesion,
-} from "../../../../Iconos/Iconos-NavBar";
+import React from "react";
 import Select from "react-select";
 
 const ModalUbigeo = ({ isOpen, onClose, children }) => {

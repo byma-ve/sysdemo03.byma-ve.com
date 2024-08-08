@@ -6,7 +6,7 @@ import {
   IconoRegistrar,
   IconoVolver,
 } from "../../../../Iconos/Iconos-NavBar";
-import NavBarGuias from "../Components/navBarGuias";
+import NavBarGuias2 from "../Components/NavBarGuias2";
 import Select from "react-select";
 
 const HomeGuiasTrans = () => {
@@ -59,7 +59,7 @@ const HomeGuiasTrans = () => {
   };
   return (
     <Home
-      children1={<NavBarGuias></NavBarGuias>}
+      children1={<NavBarGuias2></NavBarGuias2>}
       children2={
         <>
           <div className=" mx-auto p-6 bg-white shadow-md rounded-xl">
