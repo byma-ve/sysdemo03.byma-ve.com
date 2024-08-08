@@ -16,7 +16,7 @@ export const Clientes = ({
   const cargarUsuarios = async () => {
     try {
       const response = await fetch(
-        "https://sysdemo03.byma-ve.com/BackendApiRest/Administracion/Usuario/obtenerUsuarioNotificaciones.php"
+        "https://localhost/BackendApiRest/Administracion/Usuario/obtenerUsuarioNotificaciones.php"
       );
       const data = await response.json();
       setClientesData(data);

@@ -754,8 +754,19 @@ export function IconoCerrar(props) {
 }
 export function IconoCerrarSesion(props) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="m6.265 3.807l1.147 1.639a8 8 0 1 0 9.176 0l1.147-1.639A9.988 9.988 0 0 1 22 12c0 5.523-4.477 10-10 10S2 17.523 2 12a9.988 9.988 0 0 1 4.265-8.193M11 12V2h2v10z"/></svg>
-  )
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="m6.265 3.807l1.147 1.639a8 8 0 1 0 9.176 0l1.147-1.639A9.988 9.988 0 0 1 22 12c0 5.523-4.477 10-10 10S2 17.523 2 12a9.988 9.988 0 0 1 4.265-8.193M11 12V2h2v10z"
+      />
+    </svg>
+  );
 }
 
 // Icono Excel
@@ -1534,6 +1545,198 @@ export function IconoImagen(props) {
         />
         <circle cx="15" cy="9" r="2" fill="currentColor" />
       </g>
+    </svg>
+  );
+}
+
+export function IconoFolder(props) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 32 32"
+      {...props}
+    >
+      <g fill="none">
+        <g filter="url(#IconifyId1910ec1ba70a485ea5)">
+          <path
+            fill="url(#IconifyId1910ec1ba70a485ea8)"
+            d="M2.82 7.797a1.8 1.8 0 0 1 1.8-1.8h7.81a2 2 0 0 1 1.386.558l2.857 2.748c.42.404.978.629 1.56.629h7.738a1.8 1.8 0 0 1 1.8 1.8v8.176l-3.564 9.976H6.82a4 4 0 0 1-4-4z"
+          />
+        </g>
+        <g filter="url(#IconifyId1910ec1ba70a485ea6)">
+          <path
+            fill="#FCA23D"
+            d="M8.009 15.563c.518-1.407 1.878-2.344 3.403-2.344h14.212c1.162 0 .892 1.104.542 2.191l-1.683 11.692a1.806 1.806 0 0 1-1.725 1.24H6.66a3.651 3.651 0 0 1-1.96-.572l-.004-.002c-.186-.21-.711-1.209-.44-1.903z"
+          />
+        </g>
+        <g filter="url(#IconifyId1910ec1ba70a485ea7)">
+          <path
+            fill="url(#IconifyId1910ec1ba70a485ea9)"
+            d="M8.3 15.489a4 4 0 0 1 3.762-2.64h16.802a1.9 1.9 0 0 1 1.811 2.472l-4.163 13.166a2 2 0 0 1-1.907 1.397H6.808a3.981 3.981 0 0 1-2.166-.645l-.005-.002a4.023 4.023 0 0 1-1.315-1.411c.372-.028.566-.212.66-.389z"
+          />
+        </g>
+        <defs>
+          <filter
+            id="IconifyId1910ec1ba70a485ea5"
+            width="25.402"
+            height="24.037"
+            x="2.52"
+            y="5.997"
+            colorInterpolationFilters="sRGB"
+            filterUnits="userSpaceOnUse"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feBlend
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feColorMatrix
+              in="SourceAlpha"
+              result="hardAlpha"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            />
+            <feOffset dx="-.3" dy=".15" />
+            <feGaussianBlur stdDeviation=".3" />
+            <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
+            <feColorMatrix values="0 0 0 0 1 0 0 0 0 0.843137 0 0 0 0 0.360784 0 0 0 1 0" />
+            <feBlend in2="shape" result="effect1_innerShadow_18_22551" />
+            <feColorMatrix
+              in="SourceAlpha"
+              result="hardAlpha"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            />
+            <feOffset dx=".15" dy=".15" />
+            <feGaussianBlur stdDeviation=".3" />
+            <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
+            <feColorMatrix values="0 0 0 0 0.933333 0 0 0 0 0.658824 0 0 0 0 0.313726 0 0 0 1 0" />
+            <feBlend
+              in2="effect1_innerShadow_18_22551"
+              result="effect2_innerShadow_18_22551"
+            />
+          </filter>
+          <filter
+            id="IconifyId1910ec1ba70a485ea6"
+            width="26.288"
+            height="19.123"
+            x="2.179"
+            y="11.219"
+            colorInterpolationFilters="sRGB"
+            filterUnits="userSpaceOnUse"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feBlend
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feGaussianBlur
+              result="effect1_foregroundBlur_18_22551"
+              stdDeviation="1"
+            />
+          </filter>
+          <filter
+            id="IconifyId1910ec1ba70a485ea7"
+            width="28.043"
+            height="17.336"
+            x="3.022"
+            y="12.848"
+            colorInterpolationFilters="sRGB"
+            filterUnits="userSpaceOnUse"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feBlend
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feColorMatrix
+              in="SourceAlpha"
+              result="hardAlpha"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            />
+            <feOffset dx=".3" dy=".3" />
+            <feGaussianBlur stdDeviation=".25" />
+            <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
+            <feColorMatrix values="0 0 0 0 1 0 0 0 0 0.768627 0 0 0 0 0.286275 0 0 0 1 0" />
+            <feBlend in2="shape" result="effect1_innerShadow_18_22551" />
+            <feColorMatrix
+              in="SourceAlpha"
+              result="hardAlpha"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            />
+            <feOffset dx="-.3" dy=".3" />
+            <feGaussianBlur stdDeviation=".25" />
+            <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
+            <feColorMatrix values="0 0 0 0 1 0 0 0 0 0.878431 0 0 0 0 0.290196 0 0 0 1 0" />
+            <feBlend
+              in2="effect1_innerShadow_18_22551"
+              result="effect2_innerShadow_18_22551"
+            />
+          </filter>
+          <linearGradient
+            id="IconifyId1910ec1ba70a485ea8"
+            x1="7.088"
+            x2="9.901"
+            y1="6.687"
+            y2="16.813"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#FFD052" />
+            <stop offset="1" stopColor="#FFBD41" />
+          </linearGradient>
+          <linearGradient
+            id="IconifyId1910ec1ba70a485ea9"
+            x1="17.043"
+            x2="17.043"
+            y1="12.848"
+            y2="29.884"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#FFDF54" />
+            <stop offset="1" stopColor="#FFBA5F" />
+          </linearGradient>
+        </defs>
+      </g>
+    </svg>
+  );
+}
+
+
+
+export function IconoRegistrar(props) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M13.23 22v-2.21l5.334-5.307q.148-.13.307-.19q.16-.062.32-.062q.165 0 .334.064q.17.065.298.194l.925.944q.123.148.187.308q.065.159.065.319t-.052.322t-.2.31L15.44 22zM6.77 9.77h7.422v-3H6.77zm12.42 7.246l.925-.956l-.924-.944l-.95.95zM10.463 20H5.616q-.672 0-1.144-.472T4 18.385V5.615q0-.67.472-1.143Q4.944 4 5.616 4h10.961L20 7.423v4.146q-.244-.085-.468-.099t-.474.003q-.635.017-1.264.265t-1.106.718l-2.822 2.804q.096-.166.134-.322t.039-.361q0-.846-.577-1.423t-1.423-.577t-1.423.577t-.577 1.423t.577 1.423t1.423.577q.178 0 .348-.039t.329-.134l-2.254 2.234z"
+      />
+    </svg>
+  );
+}
+
+
+export function IconoVolver(props) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 512 512"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M32 96c-17.7 0-32 14.3-32 32s14.3 32 32 32h208V96zm160 192c-17.7 0-32 14.3-32 32s14.3 32 32 32h64c17.7 0 32-14.3 32-32s-14.3-32-32-32zm-64-64c0 17.7 14.3 32 32 32h48c17.7 0 32-14.3 32-32s-14.3-32-32-32h-48c-17.7 0-32 14.3-32 32m96 160c-17.7 0-32 14.3-32 32s14.3 32 32 32h64c17.7 0 32-14.3 32-32s-14.3-32-32-32zm88-96h-.6c5.4 9.4 8.6 20.3 8.6 32c0 13.2-4 25.4-10.8 35.6c24.9 8.7 42.8 32.5 42.8 60.4c0 11.7-3.1 22.6-8.6 32h8.6c88.4 0 160-71.6 160-160v-61.7c0-42.4-16.9-83.1-46.9-113.1l-11.6-11.6C429.5 77.5 396.9 64 363 64h-27c-35.3 0-64 28.7-64 64v88c0 22.1 17.9 40 40 40s40-17.9 40-40v-56c0-8.8 7.2-16 16-16s16 7.2 16 16v56c0 39.8-32.2 72-72 72"
+      />
     </svg>
   );
 }

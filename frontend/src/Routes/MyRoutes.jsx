@@ -45,6 +45,11 @@ import HomeRegistroCarga from "../Views/Operaciones/RegistroCarga/HomeCarga";
 import HomeRegistroEnvio from "../Views/Operaciones/RegistroEnvio/HomeEnvio";
 import HomeRegistroMasivo from "../Views/Operaciones/RegistroMasivo/HomeMasivo";
 import HomeSeguimiento from "../Views/Operaciones/Seguimiento/Seguimiento";
+
+// Area de Emision Documentos
+import HomeGuiasTrans from "../Views/EmisionDocs/GuiasTransportistas/Emisiones/HomeGuiasTrans";
+import HomeGuiasReportes from "../Views/EmisionDocs/GuiasTransportistas/Reportes/HomeGuiasReportes";
+import HomeGuiaEmision from "../Views/EmisionDocs/GuiasEmision/HomeGuiaEmision";
 // Area de Permisos
 import HomePermisos from "../Views/Permisos/HomePermisos";
 // Aca van sus componentes principales
@@ -259,6 +264,33 @@ function MyRoutes({ loggedIn, setLoggedIn, permisos }) {
           {
             path: "/home-seguimiento",
             element: loggedIn ? <HomeSeguimiento /> : <Navigate to="/" />,
+          },
+        ]
+      : []),
+
+    // Emision de Documentos
+    ...(permisos.emision_documentos_permiso !== 0
+      ? [
+          {
+            path: "/home-emisiondocumentos",
+            element: loggedIn ? <HomeGuiasTrans /> : <Navigate to="/" />,
+          },
+        ]
+      : []),
+
+    ...(permisos.emision_reportes_permiso !== 0
+      ? [
+          {
+            path: "/home-emisionreportes",
+            element: loggedIn ? <HomeGuiasReportes /> : <Navigate to="/" />,
+          },
+        ]
+      : []),
+    ...(permisos.emision_guias_permiso !== 0
+      ? [
+          {
+            path: "/home-emisionguias",
+            element: loggedIn ? <HomeGuiaEmision /> : <Navigate to="/" />,
           },
         ]
       : []),

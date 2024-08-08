@@ -32,13 +32,14 @@ function NavBar({ handleMenuHover, handleMenuLeave }) {
   const [abierto, setAbierto] = useState("");
   const [minimizar, setminimizar] = useState(true);
   const [minimizar2, setminimizar2] = useState(false);
+  const [minimizar3, setminimizar3] = useState(false);
   const [isHovered, setIsHovered] = useState(false); // Nuevo estado para el hover
 
   const [permisos, setPermisos] = useState("");
 
   useEffect(() => {
     fetch(
-      `https://sysdemo03.byma-ve.com/BackendApiRest/Permisos/obtenerPermisos.php?dni_usuario=${localStorage.getItem(
+      `https://localhost/BackendApiRest/Permisos/obtenerPermisos.php?dni_usuario=${localStorage.getItem(
         "user"
       )}`
     )
@@ -137,6 +138,20 @@ function NavBar({ handleMenuHover, handleMenuLeave }) {
                     )}
                   </div>
                 )}
+
+                <div className="grupo EMISIONDOCS">
+                  <IconoOperaciones className="iconos z-[10]" />
+                  {minimizar3 && (
+                    <>
+                      {permisos.operaciones_registro_envio_permiso === 1 && (
+                        <IconoRegistroEnvio className="iconos z-[10]" />
+                      )}
+                      {permisos.operaciones_registro_masivo_permiso === 1 && (
+                        <IconoRegistroMasivo className="iconos z-[10]" />
+                      )}
+                    </>
+                  )}
+                </div>
 
                 {permisos.liquidacion_permiso === 1 && (
                   <div className="grupo z-[10]">
@@ -324,6 +339,44 @@ function NavBar({ handleMenuHover, handleMenuLeave }) {
                       )}
                     </div>
                   )}
+
+                  {minimizar3 ? (
+                    <IconoUP
+                      className="Minimizar z-[10]"
+                      onClick={() => setminimizar3(false)}
+                    />
+                  ) : (
+                    <IconoDown
+                      className="Maximizar z-[10]"
+                      onClick={() => setminimizar3(true)}
+                    />
+                  )}
+                  <div className="grupo2-hover cont-logo">
+                    <p
+                      onClick={() => setminimizar3(!minimizar3)}
+                      className="items-hover titulo cursor-pointer"
+                    >
+                      Emision Docs
+                    </p>
+                    {minimizar3 && (
+                      <>
+                        {permisos.operaciones_registro_envio_permiso === 1 && (
+                          <p className="items-hover">
+                            <Link to="/home-emisiondocumentos">
+                              Guias Transportistas
+                            </Link>
+                          </p>
+                        )}
+                        {permisos.operaciones_registro_masivo_permiso === 1 && (
+                          <p className="items-hover">
+                            <Link to="/home-emisionguias">
+                              Guias de Remision
+                            </Link>
+                          </p>
+                        )}
+                      </>
+                    )}
+                  </div>
 
                   {permisos.liquidacion_permiso === 1 && (
                     <div className="grupo2-hover">

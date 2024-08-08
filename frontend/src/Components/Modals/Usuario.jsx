@@ -10,7 +10,7 @@ export const Usuario = () => {
   useEffect(() => {
     if (user) {
       fetch(
-        `https://sysdemo03.byma-ve.com/BackendApiRest/Administracion/Usuario/obtener_usuario.php?usuario=${encodeURIComponent(
+        `https://localhost/BackendApiRest/Administracion/Usuario/obtener_usuario.php?usuario=${encodeURIComponent(
           user
         )}`
       )
@@ -26,7 +26,7 @@ export const Usuario = () => {
 
   function logoutSubmit() {
     fetch(
-      `https://sysdemo03.byma-ve.com/Administracion/Usuario/estadoDesconectado.php?id=${encodeURIComponent(
+      `https://localhost/BackendApiRest/Administracion/Usuario/estadoDesconectado.php?id=${encodeURIComponent(
         localStorage.getItem("id_usuario")
       )}`
     )
