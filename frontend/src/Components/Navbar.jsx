@@ -39,7 +39,7 @@ function NavBar({ handleMenuHover, handleMenuLeave }) {
 
   useEffect(() => {
     fetch(
-      `https://localhost/BackendApiRest/Permisos/obtenerPermisos.php?dni_usuario=${localStorage.getItem(
+      `https://sysdemo03.byma-ve.com/BackendApiRest/Permisos/obtenerPermisos.php?dni_usuario=${localStorage.getItem(
         "user"
       )}`
     )

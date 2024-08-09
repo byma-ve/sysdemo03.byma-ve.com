@@ -22,7 +22,7 @@ export const Notificaciones = ({
   const cargarNotificaciones = async () => {
     if (id_usuario) {
       try {
-        const urlBase = "https://localhost/BackendApiRest/Notificaciones/";
+        const urlBase = "https://sysdemo03.byma-ve.com/BackendApiRest/Notificaciones/";
         const url =
           opcionSeleccionada === "recibidos"
             ? `${urlBase}mostrarNotificaciones.php?id_usuario=${encodeURIComponent(
@@ -104,7 +104,7 @@ export const Notificaciones = ({
       selectedNotification?.visto_notificacion !== "1"
     ) {
       fetch(
-        `https://localhost/BackendApiRest/Notificaciones/actualizarVisto.php?id=${encodeURIComponent(
+        `https://sysdemo03.byma-ve.com/BackendApiRest/Notificaciones/actualizarVisto.php?id=${encodeURIComponent(
           selectedNotification?.id
         )}`
       )
@@ -141,7 +141,7 @@ export const Notificaciones = ({
         selectedNotification?.visto_notificacion !== "1"
       ) {
         fetch(
-          `https://localhost/BackendApiRest/Notificaciones/actualizarVisto.php?id=${encodeURIComponent(
+          `https://sysdemo03.byma-ve.com/BackendApiRest/Notificaciones/actualizarVisto.php?id=${encodeURIComponent(
             selectedNotification?.id
           )}`
         )

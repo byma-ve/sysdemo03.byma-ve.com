@@ -58,7 +58,7 @@ export const CrearNotificacion = ({
     });
     try {
       const response = await fetch(
-        "https://localhost/BackendApiRest/Notificaciones/guardarNotificacion.php",
+        "https://sysdemo03.byma-ve.com/BackendApiRest/Notificaciones/guardarNotificacion.php",
         {
           method: "POST",
           headers: {

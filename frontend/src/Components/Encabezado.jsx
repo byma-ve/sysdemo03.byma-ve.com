@@ -21,7 +21,7 @@ function Encabezado() {
 
   function logoutSubmit() {
     fetch(
-      `https://localhost/BackendApiRest/Administracion/Usuario/estadoDesconectado.php?id=${encodeURIComponent(
+      `https://sysdemo03.byma-ve.com/BackendApiRest/Administracion/Usuario/estadoDesconectado.php?id=${encodeURIComponent(
         localStorage.getItem("id_usuario")
       )}`
     )
@@ -44,7 +44,7 @@ function Encabezado() {
   useEffect(() => {
     if (localStorage.getItem("id_usuario")) {
       fetch(
-        `https://localhost/BackendApiRest/Administracion/Usuario/estadoConectado.php?id=${encodeURIComponent(
+        `https://sysdemo03.byma-ve.com/BackendApiRest/Administracion/Usuario/estadoConectado.php?id=${encodeURIComponent(
           localStorage.getItem("id_usuario")
         )}`
       )
@@ -61,7 +61,7 @@ function Encabezado() {
   const cargarConteoNotificaciones = async () => {
     try {
       const response = await fetch(
-        `https://localhost/BackendApiRest/Notificaciones/obtenerConteoNotificaciones.php?id_usuario=${encodeURIComponent(
+        `https://sysdemo03.byma-ve.com/BackendApiRest/Notificaciones/obtenerConteoNotificaciones.php?id_usuario=${encodeURIComponent(
           localStorage.getItem("id_usuario")
         )}`
       );
